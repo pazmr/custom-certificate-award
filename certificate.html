@@ -1,0 +1,111 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="description" content="Certificate">
+    <meta name="author" content="Maximiliano Paz maxpaz2004@hotmail.com">
+
+    <title>[certificate_course]</title>
+    <link rel="stylesheet" type="text/css" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/css/bootstrap.min.css">
+    
+    <style type="text/css">
+
+    body {
+		  background: url(https://dl.dropboxusercontent.com/s/0a6f3fbd4be7gyo/web.png?dl=0) ; 
+		  -webkit-background-size: cover;
+		  -moz-background-size: cover;
+		  -o-background-size: cover;
+
+		  background-position: center center;
+		  background-repeat: no-repeat;
+		  background-attachment: fixed;
+		  background-color:#464646;
+		  background-size: cover;
+		  
+		  
+			}
+	.empty {
+		height: 0px;
+
+
+	}
+	@font-face {
+    font-family: myFirstFont;
+    src: url(https://dl.dropboxusercontent.com/s/lu3tpnjwifacyac/Parisish.ttf);
+}
+	@font-face {
+    font-family: Oranienbaum;
+    src: url(https://dl.dropboxusercontent.com/s/tnlqxu8r88c1jfw/Oranienbaum.ttf);
+}
+	p {
+	    font-family: myFirstFont;
+	    font-size: 150%;
+	}
+	#university {
+		font-family: Oranienbaum;
+		font-size: 250%;
+		font-weight: bold;
+		color: #3C4B6C;
+	}
+	#student {
+		font-family: Oranienbaum;
+		font-size: 200%;
+		font-weight: bold;
+		color: #C78080;
+	}
+    </style>
+    <script type="text/javascript" src="https://code.jquery.com/jquery-2.1.4.min.js"></script>
+    <script type="text/javascript" src = "https://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/js/bootstrap.min.js"></script>
+
+</head>
+
+<body>
+	<div class="container">
+
+		<div  class="row">
+			<div class="empty"></div>
+			<div class="empty"></div>
+			<div class="col-md-12 center">
+				<p id = "university" class = "text-center">
+					[University_name]
+				</p>
+				<p class="text-center"> El presente certificado se otorga a:</p>
+				<p id="student" class="text-center">
+					 [certificate_student_name]
+				</p>
+				<p class="text-center"> Con correo electrónico: [certificate_student_email]</p>
+				
+
+				<p class="text-center"> el Título de</p>
+				<p id="student" class="text-center">
+					 [certificate_code] [certificate_course]
+				</p>
+				
+				
+				<p class="text-center">con un total de [credit_hours] horas cumplidas</p>
+				<p class="text-center"> Expedido el: [certificate_student_date]</p>
+			</div>
+
+		</div>	
+		
+
+	</div>
+</body>
+<script type="text/javascript">
+	//Ajusta la altura de los espacios vacios de acuerdo al tamaño de la pantalla
+	var altura = $( window ).height(),
+		porcentaje = .12;
+
+	$(".empty").height(altura*porcentaje);
+	$( window ).resize(function() {
+			altura = $( window ).height();
+  			$(".empty").height(altura*porcentaje);
+	});
+	
+
+</script>
+</html>
