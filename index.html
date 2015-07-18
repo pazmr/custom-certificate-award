@@ -13,24 +13,9 @@
     <link rel="stylesheet" type="text/css" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/css/bootstrap.min.css">
     
     <style type="text/css">
-
-    body {
-		  background: url(https://dl.dropboxusercontent.com/s/0a6f3fbd4be7gyo/web.png?dl=0) ; 
-		  -webkit-background-size: cover;
-		  -moz-background-size: cover;
-		  -o-background-size: cover;
-
-		  background-position: center center;
-		  background-repeat: no-repeat;
-		  background-attachment: fixed;
-		  background-color:#464646;
-		  background-size: cover;
-		  
-   		  
-			}
-	@media print
-	{
-    	* {-webkit-print-color-adjust:exact;}
+    img {
+    	position:absolute;
+    	z-index:-1;
 	}
 	.empty {
 		height: 0px;
@@ -68,12 +53,14 @@
 </head>
 
 <body>
-	<div class="container">
+	<div class="container-fluid">
 
 		<div  class="row">
-			<div class="empty"></div>
-			<div class="empty"></div>
+			
 			<div class="col-md-12 center">
+				<img src="https://dl.dropboxusercontent.com/s/0a6f3fbd4be7gyo/web.png?dl=0" width="1"  alt="Certificate">
+				<div class="empty"></div>
+				<div class="empty"></div>
 				<p id = "university" class = "text-center">
 					[University_name]
 				</p>
@@ -92,6 +79,8 @@
 				
 				<p class="text-center">con un total de [credit_hours] horas cumplidas</p>
 				<p class="text-center"> Expedido el: [certificate_student_date]</p>
+				<div class="empty"></div>
+				<div class="empty"></div>
 			</div>
 
 		</div>	
@@ -101,13 +90,19 @@
 </body>
 <script type="text/javascript">
 	//Ajusta la altura de los espacios vacios de acuerdo al tamaño de la pantalla
-	var altura = $( window ).height(),
+	var altura = $( ".container-fluid" ).height(),
+		ancho = $(".container-fluid" ).width(),
+		altura_window = $(window).height(),
+		ancho_window = $(window).width(),
 		porcentaje = .12;
 
-	$(".empty").height(altura*porcentaje);
+	$(".empty").height(altura_window*porcentaje);
+	$("img").width(ancho).height(altura_window);
 	$( window ).resize(function() {
-			altura = $( window ).height();
-  			$(".empty").height(altura*porcentaje);
+			altura = $( ".container-fluid" ).height();
+			ancho = $(".container-fluid" ).width(),
+  			$(".empty").height(altura_window*porcentaje);
+  			$("img").width(ancho).height(altura_window);
 	});
 	
 
